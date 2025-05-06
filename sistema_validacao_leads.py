@@ -1,4 +1,4 @@
-import pandas as pd
+-import pandas as pd
 import re
 import random
 import streamlit as st
@@ -17,7 +17,7 @@ SDRS = {
     "Vitória Paixão": 22495673
 }
 
-API_TOKEN = "09680331086bb303e9a496d085460f6bc95242c4"
+API_TOKEN = st.secrets["API_TOKEN"]
 BASE_URL = "https://centraldosbeneficios.pipedrive.com/api/v1"
 HEADERS = {
     "Content-Type": "application/json",
@@ -25,11 +25,11 @@ HEADERS = {
 }
 
 DB_CONFIG = {
-    "host": "10.0.10.8",
-    "port": 3306,
-    "user": "carlos.santos",
-    "password": "Central@2025#",
-    "database": "sib"
+    "host": st.secrets["DB_CONFIG"]["host"],
+    "port": st.secrets["DB_CONFIG"]["port"],
+    "user": st.secrets["DB_CONFIG"]["user"],
+    "password": st.secrets["DB_CONFIG"]["password"],
+    "database": st.secrets["DB_CONFIG"]["database"]
 }
 
 CAMPO_BENEFICIOS_NEGOCIACAO = {
